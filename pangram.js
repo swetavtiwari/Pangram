@@ -1,1 +1,6 @@
-export const isPangram = inputString => false;
+export const isPangram = inputString => {
+  if (!inputString == '') {
+    return true;
+  }
+  return false;
+};
