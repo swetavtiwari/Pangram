@@ -1,8 +1,9 @@
 export const isPangram = inputString => {
   if (!inputString == '') {
     let alphabet = 'a';
+    let lowerInputString = inputString.toLowerCase();
     while (alphabet < 'z') {
-      if (inputString.indexOf(alphabet) == -1) {
+      if (lowerInputString.indexOf(alphabet) == -1) {
         return false;
       }
       alphabet = String.fromCharCode(alphabet.charCodeAt() + 1);

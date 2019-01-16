@@ -13,4 +13,8 @@ describe('Pangram()', () => {
     expect(isPangram('the quick brown fox jumps over the lazy dog'))
       .toBe(true);
   });
+  test('pangram with mixed case and punctuation', () => {
+    expect(isPangram('"Five quacking Zephyrs jolt my wax bed."'))
+      .toBe(true);
+  });
 });
