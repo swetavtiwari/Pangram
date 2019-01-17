@@ -1,14 +1,10 @@
-export const isPangram = inputString => {
-  if (!inputString == '') {
-    let alphabet = 'a';
-    let lowerInputString = inputString.toLowerCase();
-    while (alphabet < 'z') {
-      if (lowerInputString.indexOf(alphabet) == -1) {
-        return false;
-      }
-      alphabet = String.fromCharCode(alphabet.charCodeAt() + 1);
-    }
-    return true;
-  }
-  return false;
+export const isPangram = (sentence) => {
+  let asciiValue = 96;
+  const numberOfAlphabets = 26;
+  const lowerCaseAlphabets = [...Array(numberOfAlphabets)].map(() => {
+    asciiValue += 1;
+    return String.fromCharCode(asciiValue);
+  });
+  const lowerCaseSentence = sentence.toLowerCase();
+  return lowerCaseAlphabets.every(alphabet => lowerCaseSentence.includes(alphabet));
 };
